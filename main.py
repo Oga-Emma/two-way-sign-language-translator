@@ -1,4 +1,3 @@
-
 import numpy as np
 import cv2
 import os
@@ -21,7 +20,8 @@ from keras.models import load_model
 classifier = load_model('model.h5')
 def give_char():
        import numpy as np
-       from keras.preprocessing import image
+       # from keras.preprocessing import image
+       import keras.utils as image
        test_image = image.load_img('tmp1.png', target_size=(64, 64))
        test_image = image.img_to_array(test_image)
        test_image = np.expand_dims(test_image, axis = 0)
@@ -39,8 +39,8 @@ def check_sim(i,file_map):
                             return 1,item
        return -1,""
 
-op_dest="/home/aniket/Desktop/Projects/gif_extract/filtered_data/"
-alpha_dest="/home/aniket/Desktop/Projects/gif_extract/alphabet/"
+op_dest="C:/Users/emman/Projects/two-way-sign-language-translator/filtered_data/"
+alpha_dest="C:/Users/emman/Projects/two-way-sign-language-translator/alphabet/"
 dirListing = os.listdir(op_dest)
 editFiles = []
 for item in dirListing:
